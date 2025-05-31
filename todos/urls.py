@@ -27,5 +27,6 @@ urlpatterns = [
     path('tododetail/<int:PK>/',views.TodoDetailView.as_view(),name="tododet"),
     path('tododelete/<int:PK>/',views.TodoDeleteView.as_view(),name="tododel"),
     path('todoupdate/<int:PK>/',views.TodoUpdateView.as_view(),name='todoedit'),
-    path('logout/',views.Logoutview.as_view())
+    path('logout/',views.Logoutview.as_view()),
+    
 ]

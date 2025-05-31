@@ -3,6 +3,7 @@ from django.views.generic import View
 from todoapp.forms import TodoForm,RegistrationForm,LoginForm
 from todoapp.models import User,Todo
 from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
 
 
 
@@ -36,7 +37,9 @@ class UserLoginView(View):
         if user_obj:
             login(request,user_obj) # if it is correct then login work
             return redirect('todo')
-       
+            
+            
+        messages.success(request,"login fail")
         return render(request,'login.html',{"form":form_instance})
     
 class TodoView(View):
